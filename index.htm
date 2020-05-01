@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<title>Blog Template</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+
+#more {display: none;}
+#more1 {display: none;}
+</style>
+
+
+<body class="w3-light-grey" onload="startTime()">
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
+  <!--<h3><a href="http://mithilesh.online/login.html" style="text-decoration:none;margin-left:1100px;color:red">Login</a></h3>-->
+  <h1><b>MY BLOG </b></h1>
+  <p>Welcome to the blog of <span class="w3-tag">Mithilesh</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="image/sunshine.jpg" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>TITLE HEADING</b></h3>
+      <h5>Today's Date : <b><span class="w3-opacity" id="date"></span></b></h5>
+      <h5>Time : <b><span class="w3-opacity" id="time"></span></b></h5>
+    </div>
+
+    <div class="w3-container">
+        <h5><b>Title description :- </b></h5>
+      <p>When you wake up each morning, you can choose to be happy or choose to be sad. Unless some terrible catastrophe has occurred the night before, 
+      it is pretty much up to you. Tomorrow morning, when the sun shines through your window, choose to make it a happy day.
+      <span id="dots1">...</span><span id="more1">
+          <br><br> <b>Some people dream of Success, while other people get up every morning and make it happen :-) </b>
+      </span></p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+            <p><button class="w3-button w3-padding-large w3-white w3-border" onclick="myFunction1()" id="myBtn1"><b>READ MORE »</b></button></p>
+          <!--<p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>-->
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="/image/siet/siet2.jpg" alt="siet2" style="width:100%;">
+    <div class="w3-container">
+      <h3><b>COLLEGE ENTRY</b></h3>
+      <h5>Title description, <span class="w3-opacity">May 5, 2019</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>College life Aaah aaa! Or Wow! First, my experience in college has given me a chance to sharpen my skills in my field of choice, but regretally i wanna say not much interested in 
+      reading text books making notes, these was rubbish for me. Meanwhile, I'd say with very deginty, i got lots of awesome & unbeliaveable FRIENDS  { nothing but ak se ak pauchea hua Namuna :-) } who taught me so many aspects of life
+      Journey. Madams & Teachers are also very attractive. No doubght !<span id="dots">...</span><span id="more">
+          <br><br> <b>People who defend your name when you are not around are the most loyal friends you could ever get.</b>
+      </span></p>
+      
+      <!--<button onclick="myFunction()" id="myBtn">Read more</button>-->
+     <script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "READ MORE »"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "READ LESS »"; 
+    moreText.style.display = "inline";
+  }
+}
+function myFunction1() {
+  var dots = document.getElementById("dots1");
+  var moreText = document.getElementById("more1");
+  var btnText = document.getElementById("myBtn1");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "READ MORE »"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "READ LESS »"; 
+    moreText.style.display = "inline";
+  }
+}
+
+</script>
+
+<script>
+   /*document.getElementById("date").innerHTML =new Date(); it will give every thing date & time
+       dmy =  new Date();
+      year = dmy.getFullYear();
+      mon = dmy.getMonth() + 1;
+      date = dmy.getDate();
+      document.getElementById("date").innerHTML = date + "-" + mon + "-" + year;*/
+      function formatDate(date) {
+     var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+
+  return day + ' ' + monthNames[monthIndex] + ' ' + year;
+}
+
+document.getElementById("date").innerHTML =formatDate(new Date());
+</script>
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('time').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border" onclick="myFunction()" id="myBtn"><b>READ MORE »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <!--<img src="image/mithu.jpg" style="width:100%">-->
+  <img src="/image/empower/empow (2).png" alt="empower2" style="width:100%;">
+    <div class="w3-container w3-white">
+      <h4><b>My Name</b></h4>
+      <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of
+      love and a interest of lore grab. I want to share my world with you.</p>
+    </div>
+  </div><hr>
+   <div class="w3-card w3-margin w3-margin-top">
+  <!--<img src="image/mithu.jpg" style="width:100%">-->
+  <!--<img src="/image/index1.png" alt="index1" style="width:100%;">-->
+    <div class="w3-container w3-white">
+      <h4><b>My Aim</b></h4>
+      <p>Just me, myself and I, exploring my Aim ..................................................................................................</div><hr>
+ 
+  <div class="w3-card w3-margin w3-margin-top">
+  <!--<img src="image/mithu.jpg" style="width:100%">-->
+  <img src="/image/index2.png" alt="index1" style="width:100%;">
+   <!-- <div class="w3-container w3-white">
+      <h4><b>My Name</b></h4>
+      <p>Just me, myself and I, exploring the universe of uknownment. I have a heart of
+      love and a interest of lore grab. I want to share my world with you.</p>
+    </div>-->
+  </div><hr>
+  <!-- Labels / tags -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Old Memories</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p>
+    
+      <a href="java.htm"><span class="w3-tag w3-light-grey w3-small w3-margin-bottom">JAVA</span></a>&nbsp;
+      
+      <a href="/html/loginkli.htm"><span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Kli</span></a>&nbsp;
+      <a href="/html/english.htm"><span class="w3-tag w3-light-grey w3-small w3-margin-bottom">English</span></a>&nbsp;
+      <a href="/html/login.htm"><span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Secret</span></a>&nbsp;
+     <a href="/html/empower.htm"><span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Empowerment</span></a>&nbsp;
+      <a href="/html/hadoop.html"><span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Hadoop</span></a>&nbsp;
+      <a href="/html/siet1.html"><span class="w3-tag w3-light-grey w3-small w3-margin-bottom">S.I.E.T</span></a>&nbsp;
+      <a href="https://drive.google.com/drive/folders/1YI1DYvJSWB9QHlHRZs8TvJzGmgXllvgC" target="_blank">
+          <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New Year 2019 Trip(Hognekal Falls)</span></a>&nbsp;
+      <a href="html/logincts.htm"><span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Cognizant</span></a>&nbsp;
+      
+    </p>
+    </div>
+  </div>
+  
+  
+   <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Software Installation Info</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p>
+      <a href="html/oracle.html"><span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Oracle Install in Ubuntu</span></a>
+    </p>
+    </div>
+  </div>
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button><br>
+  <!--target="_blank open new tab -->
+  <ul class="clearfix" style="list-style-type: none">
+      <li style="text-align:center"><div class="copyright">&copy; 2019 <a href="home.htm" target="_blank">mithilesh</a> all rights reserved..!</div></li>
+            <li class="mob_socialicon social">
+                <spam class="followus"><p></p></spam>
+            <div class="followus" style="text-align:center">Follow me at : &nbsp;<a href="https://www.facebook.com/mithileshchandra220" target="_blank" class="fa fa-facebook-square" 
+                 style="font-size:36px;text-decoration:none;color:white"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/mithileshchandra" target="_blank" class="fa fa-instagram"
+                 style="font-size:36px;text-decoration:none;color:white"></a>
+            </div>
+            
+            </li>
+  </ul>
+</footer>
+</div>
+</body>
+</html>
